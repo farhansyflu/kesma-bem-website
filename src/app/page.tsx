@@ -89,22 +89,23 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <section className="px-5 pb-24 relative overflow-hidden">
-          <div className="relative z-10">
+     <section className="relative overflow-hidden px-5 pb-[9vw]">
+        <Image
+          src="/faq-wave.svg"
+          alt=""
+          aria-hidden="true"
+          width={1440}
+          height={400}
+          sizes="100vw"
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-auto w-full select-none"
+        />
+        <div className="relative z-10">
           <Reveal>
             <h2 className="mb-8 text-center text-4xl font-bold sm:text-5xl">FAQ</h2>
           </Reveal>
           <Faq />
-          </div>
-
-            <Image
-              src="/faq-wave.svg"
-              alt=""
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover object-bottom"
-              fill
-            />
-        </section>
+        </div>
+      </section>
       </main>
       <Footer />
     </>
