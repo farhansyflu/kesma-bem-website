@@ -4,7 +4,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
-const MIN_MS = 600; // tampil minimal agar animasi terlihat
+const MIN_MS = 400; // tampil minimal agar animasi terlihat
 const MAX_MS = 4000; // batas aman jika event load tidak kunjung datang
 
 export function Preloader() {
@@ -32,7 +32,7 @@ export function Preloader() {
         window.setTimeout(() => {
           document.documentElement.dataset.ready = "1";
           setHiding(true);
-          timers.push(window.setTimeout(() => setGone(true), 800));
+          timers.push(window.setTimeout(() => setGone(true), 550));
         }, wait)
       );
     };
@@ -56,7 +56,7 @@ export function Preloader() {
       aria-live="polite"
       aria-label="Memuat halaman"
       className={`surface-hero fixed inset-0 z-[100] flex flex-col items-center justify-center transition-[transform,opacity] duration-700 ease-[cubic-bezier(0.7,0,0.2,1)] ${
-        hiding ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100"
+        hiding ? "-translate-y-full opacity-0.001" : "translate-y-0 opacity-100"
       }`}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}

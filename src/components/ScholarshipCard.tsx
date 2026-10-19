@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ArrowRight, CalendarDays } from "lucide-react";
 import { formatRange } from "@/lib/format";
 import { publicImageUrl } from "@/lib/config";
+import { Reveal } from "./Reveal";
 
 export type Scholarship = {
   id: string;
@@ -16,6 +17,7 @@ export type Scholarship = {
 export function ScholarshipCard({ s }: { s: Scholarship }) {
   const src = publicImageUrl(s.foto_path, "/placeholder-poster.svg");
   return (
+    <Reveal>
     <a
       href={s.url_postingan}
       target="_blank"
@@ -44,5 +46,6 @@ export function ScholarshipCard({ s }: { s: Scholarship }) {
         </span>
       </div>
     </a>
+    </Reveal>
   );
 }

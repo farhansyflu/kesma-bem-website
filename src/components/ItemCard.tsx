@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ArrowRight, MapPin, Star } from "lucide-react";
 import { useRef, useState } from "react";
 import { ADMIN_WA, waLink } from "@/lib/config";
+import { Reveal } from "./Reveal";
 
 export type ItemCardData = {
   id: string;
@@ -34,6 +35,7 @@ export function ItemCard({ item }: { item: ItemCardData }) {
   }
 
   return (
+    <Reveal>
     <div className="h-full">
       <button
         type="button"
@@ -111,5 +113,6 @@ export function ItemCard({ item }: { item: ItemCardData }) {
         </div>
       </dialog>
     </div>
+    </Reveal>
   );
 }

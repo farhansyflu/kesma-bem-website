@@ -2,15 +2,23 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "./Reveal";
 
-export function SectionHeader({ title, desc }: { title: string; desc: string }) {
-  return (
-    <Reveal>
-      <div className="grid gap-3 md:grid-cols-[1fr_minmax(0,26rem)] md:items-end md:gap-12">
-        <h2 className="text-4xl font-bold leading-tight sm:text-5xl">{title}</h2>
-        <p className="text-ink">{desc}</p>
-      </div>
-    </Reveal>
+export function SectionHeader({
+  title,
+  desc,
+  reveal = true,
+}: {
+  title: string;
+  desc: string;
+  reveal?: boolean;
+}) {
+  const content = (
+    <div className="grid gap-3 md:grid-cols-[1fr_minmax(0,26rem)] md:items-end md:gap-12">
+      <h2 className="text-4xl font-bold leading-tight sm:text-5xl">{title}</h2>
+      <p className="text-ink">{desc}</p>
+    </div>
   );
+
+  return reveal ? <Reveal>{content}</Reveal> : content;
 }
 
 export function SeeAll({ href }: { href: string }) {
