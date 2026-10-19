@@ -3,17 +3,15 @@
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { FAQ } from "@/lib/faq";
-import { Reveal } from "./Reveal";
 
 export function Faq() {
-  const [open, setOpen] = useState<number | null>(0);
+  const [open, setOpen] = useState<number | null>(null);
   return (
     <div className="mx-auto max-w-3xl space-y-3">
       {FAQ.map((item, i) => {
         const isOpen = open === i;
         return (
-          <Reveal key={item.q} delay={i * 90}>
-          <div className="rounded-2xl border border-gold/60 bg-paper shadow-card">
+          <div key={item.q} className="rounded-2xl border border-gold/60 bg-paper shadow-card">
             <button
               type="button"
               aria-expanded={isOpen}
@@ -24,7 +22,7 @@ export function Faq() {
               {item.q}
               <ChevronDown
                 size={20}
-                className={`shrink-0 text-teal transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                className={`shrink-0 text-teal transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
               />
             </button>
             <div
@@ -40,7 +38,6 @@ export function Faq() {
               </div>
             </div>
           </div>
-          </Reveal>
         );
       })}
     </div>

@@ -27,13 +27,7 @@ body {
   }
   body {
     @apply font-sans text-navy antialiased;
-    letter-spacing: -0.04em; /* Inter, -4% */
-  }
-  h1,
-  h2,
-  h3 {
-    font-family: var(--font-display), Georgia, serif;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.04em;
   }
 }
 

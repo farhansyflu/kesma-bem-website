@@ -49,6 +49,9 @@ export function Hero() {
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover object-bottom"
           fill
+          sizes="100vw"
+          priority
+          fetchPriority="high"
         />
 
         <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-5 pb-40 pt-14 text-center md:pb-48 md:pt-20">
